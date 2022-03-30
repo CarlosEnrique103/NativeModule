@@ -42,8 +42,9 @@ public class PhoneModule extends ReactContextBaseJavaModule {
 
   @ReactMethod
   public void getPhone(Promise promise) {
+    // && ContextCompat.checkSelfPermission(reactContext, READ_SMS) == PackageManager.PERMISSION_GRANTED
     try {
-      if ( ContextCompat.checkSelfPermission(reactContext, READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED  && ContextCompat.checkSelfPermission(reactContext, READ_SMS) == PackageManager.PERMISSION_GRANTED) {
+      if ( ContextCompat.checkSelfPermission(reactContext, READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
           TelephonyManager telephonyManager = (TelephonyManager) reactContext.getSystemService(reactContext.TELEPHONY_SERVICE);
           String phoneNumber = telephonyManager.getLine1Number();
           promise.resolve("Have permissions: " + phoneNumber );

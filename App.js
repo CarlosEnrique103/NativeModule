@@ -23,7 +23,9 @@ const App = () => {
     if (
       userPermissions['android.permission.READ_PHONE_STATE'] ===
         PermissionsAndroid.RESULTS.GRANTED &&
-      userPermissions['android.permission.READ_SMS'] ===
+      userPermissions['android.permission.READ_CONTACTS'] ===
+        PermissionsAndroid.RESULTS.GRANTED &&
+      userPermissions['android.permission.READ_CALL_LOG'] ===
         PermissionsAndroid.RESULTS.GRANTED
     ) {
       GetPhoneNumber();
