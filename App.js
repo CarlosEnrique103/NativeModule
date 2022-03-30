@@ -7,18 +7,20 @@ const App = () => {
     // PermissionsAndroid.PERMISSIONS.READ_PHONE_NUMBERS,
     const userPermissions = await PermissionsAndroid.requestMultiple([
       PermissionsAndroid.PERMISSIONS.READ_PHONE_STATE,
-
+      PermissionsAndroid.PERMISSIONS.READ_PHONE_NUMBERS,
       PermissionsAndroid.PERMISSIONS.READ_SMS,
     ]);
 
-    if (
-      userPermissions['android.permission.READ_PHONE_STATE'] ===
-        PermissionsAndroid.RESULTS.GRANTED &&
-      userPermissions['android.permission.READ_SMS'] ===
-        PermissionsAndroid.RESULTS.GRANTED
-    ) {
-      console.log({phoneNumber: await GetPhoneNumber()});
-    }
+    console.log({userPermissions});
+
+    // if (
+    //   userPermissions['android.permission.READ_PHONE_STATE'] ===
+    //     PermissionsAndroid.RESULTS.GRANTED &&
+    //   userPermissions['android.permission.READ_SMS'] ===
+    //     PermissionsAndroid.RESULTS.GRANTED
+    // ) {
+    //   console.log({phoneNumber: await GetPhoneNumber()});
+    // }
   };
 
   return (
