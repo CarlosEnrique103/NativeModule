@@ -4,9 +4,10 @@ import {GetPhoneNumber} from './utilities/UsePhoneNumber';
 
 const App = () => {
   const onPress = async () => {
+    // PermissionsAndroid.PERMISSIONS.READ_PHONE_NUMBERS,
     const userPermissions = await PermissionsAndroid.requestMultiple([
       PermissionsAndroid.PERMISSIONS.READ_PHONE_STATE,
-      // PermissionsAndroid.PERMISSIONS.READ_PHONE_NUMBERS,
+
       PermissionsAndroid.PERMISSIONS.READ_SMS,
     ]);
 
